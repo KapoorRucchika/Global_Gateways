@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>View Package</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <%- include ("./common/header.ejs") %>
+
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+
+      <div class="card shadow-lg p-4 w-100" style="max-width: 450px;">
+
+        <h4 class="text-center text-primary fw-bold mb-4">
+          View Package
+        </h4>
+
+        <form method="post">
+
+          <!-- Package Name -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Package Name <span class="text-danger">*</span></label>
+            <input type="text" name="package" class="form-control" required value="<%= packdatas.package %>">
+          </div>
+
+          <!-- Country -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Country</label>
+            <input type="text" name="country" class="form-control" value="<%= packdatas.country %>">
+          </div>
+
+          <!-- Price -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Price</label>
+            <input type="number" name="price" class="form-control" value="<%= packdatas.price %>">
+          </div>
+
+          <!-- Duration -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Duration (Days) <span class="text-danger">*</span></label>
+            <input type="number" name="duration" class="form-control" required value="<%= packdatas.duration %>">
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Phone <span class="text-danger">*</span></label>
+            <input type="tel" name="phone" class="form-control" required value="<%= packdatas.phone %>">
+          </div>
+
+          <!-- Button -->
+          <button type="submit" class="btn btn-primary w-100 fw-bold">
+            Edit Package
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <%- include ("./common/footer.ejs") %>
+
+</body>
+
+</html>

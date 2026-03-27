@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <title>View Contact</title>
+
+</head>
+
+<body>
+  <%- include("./header.ejs") %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <%- include("./left.ejs") %>
+        </div>
+        <div class="col-9 d-flex justify-content-center align-items-center">
+          <% if(regdatas.length>0){ %>
+            <table class="table table-bordered table-sm" id="myTables">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Query</th>
+                  <th>Member</th>
+                  <th>Concern</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<regdatas.length; i++){%>
+                <tr>
+                  <td><%= regdatas[i].email %></td>
+                  <td><%= regdatas[i].phone %></td>
+                  <td><%= regdatas[i].query %></td>
+                  <td><%= regdatas[i].member %></td>
+                  <td><%= regdatas[i].concern %></td>
+                  <td><a href="/delete2/<%= regdatas[i]._id %>">Delete</a></td>
+                  <td><a href="/edit1/<%= regdatas[i]._id %>">Edit</a></td>
+                </tr>
+                  <% } %>
+
+              </tbody>
+            </table>
+            <% } else { %>
+              no record found
+          <%} %>
+        </div>
+      </div>
+
+</body>
+
+</html>

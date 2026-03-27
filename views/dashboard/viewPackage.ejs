@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title>View Package</title>
+
+</head>
+
+<body>
+  <%- include("./header.ejs") %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <%- include("./left.ejs") %>
+        </div>
+        <div class="col-9 d-flex justify-content-center align-items-center">
+          <% if(packdata.length>0){ %>
+            <table class="table table-bordered table-sm" id="myTable">
+              <thead>
+                <tr>
+                  <th>Package Name</th>
+                  <th>Country</th>
+                  <th>Price</th>
+                  <th>Duration</th>
+                  <th>Phone</th>
+                  <th>Images</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<packdata.length; i++){%>
+                  <tr>
+                    <td>
+                      <%= packdata[i].package %>
+                    </td>
+                    <td>
+                      <%= packdata[i].country %>
+                    </td>
+                    <td>
+                      <%= packdata[i].price %>
+                    </td>
+                    <td>
+                      <%= packdata[i].duration %>
+                    </td>
+                    <td>
+                      <%= packdata[i].phone %>
+                    </td>
+                    <td>
+                      <img src="/uploads/<%= packdata[i].image %>" alt="Image" width="100">
+                    </td>
+
+                    <td><a href="/delete3/<%= packdata[i]._id %>">Delete</a></td>
+                  </tr>
+                  <% } %>
+
+              </tbody>
+            </table>
+            <% } else { %>
+              no record found
+              <%} %>
+        </div>
+      </div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+# 🔥 Node modules (very important)
+node_modules/
+config.js
+
+# 🔐 Environment variables
+.env
+
+# 📦 Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🗂 OS files
+.DS_Store
+Thumbs.db
+
+# 📁 Uploads (optional - ignore user uploads)
+uploads/*
+!uploads/.gitkeep
+
+# 🧪 Coverage
+coverage/
+
+# 🛠 Build folders
+dist/
+build/
+
+# 🔄 Temporary files
+*.tmp
+*.temp
+
+# 🧠 VS Code settings (optional)
+.vscode/
+
+# 🔑 System files
+*.pid
+*.seed
+
+# 📄 Package lock (optional, usually keep it)
+# package-lock.json
+
+# 🧾 Debug files
+*.out
+*.err

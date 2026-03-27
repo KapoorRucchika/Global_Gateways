@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title>View Register</title>
+
+</head>
+
+<body>
+  <%- include("./header.ejs") %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <%- include("./left.ejs") %>
+        </div>
+        <div class="col-9 d-flex justify-content-center align-items-center">
+          <% if(regdata.length>0){ %>
+            <table class="table table-bordered table-sm" id="myTable">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<regdata.length; i++){%>
+                <tr>
+                  <td><%= regdata[i].username %></td>
+                  <td><%= regdata[i].email %></td>
+                  <td><%= regdata[i].country %></td>
+                  <td><%= regdata[i].phone %></td>
+                  <td><a href="/delete/<%= regdata[i]._id %>">Delete</a></td>
+                  <td><a href="/edit/<%= regdata[i]._id %>">Edit</a></td>
+                </tr>
+                  <% } %>
+
+              </tbody>
+            </table>
+            <% } else { %>
+              no record found
+          <%} %>
+        </div>
+      </div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+    <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+        <h4 class="text-center text-primary fw-bold mb-4">Registration Form</h4>
+
+        <form method="post" >
+            <div class="mb-3">
+                <label class="form-label">Name<span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control border-0 border-bottom" placeholder="Enter name" required  value="<%= regdata.username %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control border-0 border-bottom" placeholder="Enter email" value="<%= regdata.email %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Country</label>
+                <input type="text" name="country" class="form-control border-0 border-bottom" placeholder="Enter country" value="<%= regdata.country %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Phone<span class="text-danger">*</span></label>
+                <input type="tel" name="phone" class="form-control border-0 border-bottom" placeholder="Enter phone number" required value="<%= regdata.phone %>">
+            </div>
+
+            <div class="mb-3 position-relative">
+                <label class="form-label">Password<span class="text-danger">*</span></label>
+                <input type="password" name="pass" class="form-control border-0 border-bottom" id="passwordInput"
+                    placeholder="Enter password" required value="<%= regdata.pass %>">
+            </div>
+
+            <button type="submit" class="btn w-100 text-white fw-bold"
+                style="background: linear-gradient(to right, #00e6e6, #00cc99);">Edit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

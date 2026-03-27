@@ -1,0 +1,66 @@
+<html>
+
+    <head>
+        <title>Dashboard</title>
+
+    </head>
+
+    <body>
+        <%- include("./header.ejs") %>
+         <div class="container-fluid">
+             <div class="row">
+                  <div class="col-3">
+                       <%- include("./left.ejs") %>
+                    </div>
+                 <div class="col-9 d-flex align-items-center">
+                     <div class="card p-2 shadow container" style="max-width: 600px; width: 100%;">
+                         <h4 class="text-center text-primary fw-bold mb-4">Add Packages</h4>
+
+                         <form action="/package" method="post" enctype="multipart/form-data">
+                             <div class="mb-3">
+                                    <label class="form-label ms-2">Package Name :<span class="text-danger">*</span></label>
+                                 <input type="text" name="package" class="form-control border border-dark" placeholder="Enter Package name" required>
+                             </div>
+
+                                <div class="mb-3">
+                                  <label class="form-label ms-2">Country :<span class="text-danger">*</span></label>
+                                 <input type="text" name="country" class="form-control border border-dark" placeholder="Enter Country" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label ms-2">Price :<span class="text-danger">*</span></label>
+                                    <input type="text" name="price" class="form-control border border-dark" placeholder="Enter Package Price" required>
+                             </div>
+
+                                <div class="mb-3 position-relative">
+                                    <label class="form-label ms-2">Duration :<span class="text-danger">*</span></label>
+                                    <input type="" name="duration" class="form-control border border-dark" placeholder="From"
+                                        required>
+                                    <!-- <input type="" class="form-control border border-dark mt-2" placeholder="To" required> -->
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label ms-2">Phone :<span class="text-danger">*</span></label>
+                                 <input type="tel" name="phone" class="form-control border border-dark" placeholder="Enter phone number" required>
+                                </div>
+
+
+
+                             <div class="mb-3">
+                                 <label for="formFileMultiple" class="form-label ms-2">Upload Images :</label>
+                                 <input class="form-control" name="image" type="file" id="formFileMultiple" multiple>
+                                </div>
+
+                                <button type="submit" class="btn w-100 text-white fw-bold"
+                                    style="background: linear-gradient(to right, #00e6e6, #00cc99);">Add</button>
+                            </form>
+                     </div>
+
+                 </div>
+
+             </div>
+            </div>
+
+    </body>
+
+</html>
